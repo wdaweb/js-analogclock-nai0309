@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>js-analogclock</title>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <!-- custom css -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="h-100 w-100 container d-flex justify-content-center align-items-center">
+    <div id="clockbg">
+      <div class="hr"></div>
+      <div class="min"></div>
+      <div class="sec"></div>
+    </div>
+    <div id="particles-js" class="h-100 w-100 position-fixed"></div>
+  </div>
+
+  <!-- bootstrap -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- particles -->
+  <script src="js/particles.min.js"></script>
+  <script src="js/particles-app.js"></script>
+</body>
+<script>
+  let time = new Date();
+  let getsec = time.getSeconds();
+  let getmin = time.getMinutes();
+  let gethr = time.getHours();
+
+  let s = getsec * 6;
+  let m = getmin * 6 + getsec * 0.1;
+  let h = gethr * 30 + getmin * 0.5;
+
+  document.getElementsByClassName("hr")[0].style.transform = `rotate(${h}deg)`;
+  document.getElementsByClassName("min")[0].style.transform = `rotate(${m}deg)`;
+  document.getElementsByClassName("sec")[0].style.transform = `rotate(${s}deg)`;
+
+  function clock() {
+    time = new Date();
+    getsec = time.getSeconds();
+    getmin = time.getMinutes();
+    gethr = time.getHours();
+
+    s = getsec * 6;
+    m = getmin * 6 + getsec * 0.1;
+    h = gethr * 30 + getmin * 0.5;
+    document.getElementsByClassName("hr")[0].style.transform = `rotate(${h}deg)`;
+    document.getElementsByClassName("min")[0].style.transform = `rotate(${m}deg)`;
+    document.getElementsByClassName("sec")[0].style.transform = `rotate(${s}deg)`;
+  }
+
+
+  var run = setInterval(clock, 1000);
+
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  background: #000a1f;
+}
+
+#clockbg {
+  width: 550px;
+  height: 550px;
+  background: url("../img/clock_bg.png");
+  border-radius: 50%;
+  border: 10px solid cornsilk;
+  z-index: 9999;
+  box-shadow: 3px 3px 16px cornsilk;
+  position: relative;
+}
+
+.hr {
+  width: 35px;
+  height: 550px;
+  background: url("../img/hh.png");
+  position: absolute;
+  left: 45%;
+  bottom: -2%;
+}
+.min {
+  width: 35px;
+  height: 550px;
+  background: url("../img/mm.png");
+  position: absolute;
+  left: 45%;
+  bottom: -2%;
+}
+.sec {
+  width: 35px;
+  height: 550px;
+  background: url("../img/ss.png");
+  position: absolute;
+  left: 45%;
+  bottom: -2%;
+}
